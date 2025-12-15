@@ -298,37 +298,7 @@
             font-size: 1.2rem;
         }
 
-        /* === FOOTER SIMPLIFICADO === */
-        .footer {
-            background-color: #0a1427;
-            padding: 30px 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            text-align: center;
-            margin-top: auto;
-        }
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-        .footer-links a {
-            color: var(--color-text-muted);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s;
-        }
-        .footer-links a:hover {
-            color: var(--color-accent-light);
-        }
-        .copyright {
-            color: var(--color-text-muted);
-            font-size: 0.85rem;
-            line-height: 1.5;
-        }
-
-        /* === MODAL PARA VIDEO === */
+        /* === MODAL PARA VIDEO CON LLAMADO A LA ACCIÓN === */
         .video-modal {
             display: none;
             position: fixed;
@@ -387,6 +357,111 @@
             height: 100%;
             border: none;
         }
+        
+        /* === OVERLAY DE ACCIÓN DESPUÉS DEL VIDEO === */
+        .action-overlay {
+            display: none;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to top, rgba(15, 27, 51, 0.95), rgba(15, 27, 51, 0.8));
+            padding: 25px;
+            text-align: center;
+            z-index: 5;
+            animation: slideUp 0.5s ease;
+        }
+        .action-overlay.active {
+            display: block;
+        }
+        @keyframes slideUp {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+        }
+        .action-title {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        .action-subtitle {
+            color: var(--color-accent-light);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+        .action-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px 40px;
+            background: linear-gradient(90deg, var(--color-accent), #ff8e53);
+            color: white;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            font-weight: 800;
+            text-decoration: none;
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.5);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 10px 30px rgba(255, 107, 53, 0.5); }
+            50% { transform: scale(1.05); box-shadow: 0 15px 40px rgba(255, 107, 53, 0.7); }
+            100% { transform: scale(1); box-shadow: 0 10px 30px rgba(255, 107, 53, 0.5); }
+        }
+        .action-btn:hover {
+            transform: translateY(-5px);
+            animation: none;
+            box-shadow: 0 20px 40px rgba(255, 107, 53, 0.8);
+        }
+        .action-btn i {
+            margin-right: 12px;
+            font-size: 1.3rem;
+        }
+        .close-action {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            color: rgba(255, 255, 255, 0.7);
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 6;
+        }
+        .close-action:hover {
+            color: white;
+        }
+
+        /* === FOOTER SIMPLIFICADO === */
+        .footer {
+            background-color: #0a1427;
+            padding: 30px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+            margin-top: auto;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .footer-links a {
+            color: var(--color-text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        .footer-links a:hover {
+            color: var(--color-accent-light);
+        }
+        .copyright {
+            color: var(--color-text-muted);
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
 
         /* === RESPONSIVE === */
         @media (max-width: 768px) {
@@ -400,6 +475,9 @@
             .footer-links { flex-direction: column; gap: 15px; }
             .video-play-button { width: 70px; height: 70px; }
             .video-play-button i { font-size: 28px; }
+            .action-overlay { padding: 20px 15px; }
+            .action-title { font-size: 1.3rem; }
+            .action-btn { padding: 16px 30px; font-size: 1.1rem; }
         }
     </style>
 </head>
@@ -503,7 +581,7 @@
         </div>
     </main>
 
-    <!-- MODAL PARA VIDEO -->
+    <!-- MODAL PARA VIDEO CON ACCIÓN DE CONVERSIÓN -->
     <div class="video-modal" id="videoModal">
         <div class="modal-content">
             <button class="close-modal" id="closeModal">
@@ -516,6 +594,17 @@
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                         allowfullscreen>
                 </iframe>
+                <!-- OVERLAY DE ACCIÓN QUE APARECE DESPUÉS DEL VIDEO -->
+                <div class="action-overlay" id="actionOverlay">
+                    <button class="close-action" id="closeAction">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <h3 class="action-title">¡Perfecto! Ya viste cómo funciona</h3>
+                    <p class="action-subtitle">Ahora es el momento de dar el siguiente paso</p>
+                    <a href="https://aiviraldownline.com/lc.php?id=Jobshndez" class="action-btn" target="_blank" id="modalRegisterBtn">
+                        <i class="fas fa-rocket"></i> Comienza tu prueba GRATIS ahora
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -537,30 +626,102 @@
         // Año actual en el footer
         document.getElementById('currentYear').textContent = new Date().getFullYear();
         
-        // === SISTEMA DE VIDEO PROTEGIDO ===
+        // === SISTEMA DE VIDEO CON ACCIÓN DE CONVERSIÓN ===
         const videoThumbnail = document.getElementById('videoThumbnail');
         const videoModal = document.getElementById('videoModal');
         const closeModal = document.getElementById('closeModal');
+        const closeAction = document.getElementById('closeAction');
         const embeddedVideo = document.getElementById('embeddedVideo');
+        const actionOverlay = document.getElementById('actionOverlay');
+        const modalRegisterBtn = document.getElementById('modalRegisterBtn');
         
+        // Variables para controlar el estado del video
+        let videoEnded = false;
+        let videoStarted = false;
+        
+        // Abrir modal al hacer clic en la miniatura
         videoThumbnail.addEventListener('click', function() {
-            embeddedVideo.src = "https://www.youtube.com/embed/9i8HzENK6Js?autoplay=1&rel=0&modestbranding=1&controls=1&showinfo=0";
+            const videoId = '9i8HzENK6Js';
+            embeddedVideo.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&controls=1&showinfo=0&enablejsapi=1`;
             videoModal.classList.add('active');
             document.body.style.overflow = 'hidden';
+            
+            // Reiniciar estado
+            videoEnded = false;
+            videoStarted = true;
+            
+            // Configurar el listener para cuando termine el video
+            setTimeout(() => {
+                if (embeddedVideo.contentWindow) {
+                    // Enviar mensaje para detectar el fin del video
+                    embeddedVideo.contentWindow.postMessage('{"event":"listening","id":0}', '*');
+                }
+            }, 2000);
         });
         
+        // Escuchar mensajes del iframe de YouTube
+        window.addEventListener('message', function(event) {
+            try {
+                const data = JSON.parse(event.data);
+                
+                // Detectar cuando el video termina
+                if (data.event === 'onStateChange') {
+                    if (data.info === 0) { // 0 = video terminado
+                        videoEnded = true;
+                        // Mostrar la acción de conversión
+                        setTimeout(() => {
+                            actionOverlay.classList.add('active');
+                        }, 800);
+                    }
+                }
+            } catch (e) {
+                // No es un mensaje JSON válido
+            }
+        });
+        
+        // Cerrar modal principal
         closeModal.addEventListener('click', function() {
-            videoModal.classList.remove('active');
-            embeddedVideo.src = "";
-            document.body.style.overflow = 'auto';
+            // Si el video ya empezó pero no terminó, mostrar acción de conversión
+            if (videoStarted && !videoEnded) {
+                actionOverlay.classList.add('active');
+            } else {
+                closeVideoModal();
+            }
         });
         
+        // Cerrar solo el overlay de acción
+        closeAction.addEventListener('click', function() {
+            actionOverlay.classList.remove('active');
+            setTimeout(closeVideoModal, 300);
+        });
+        
+        // Cerrar modal al hacer clic fuera del video
         videoModal.addEventListener('click', function(e) {
             if (e.target === videoModal) {
-                videoModal.classList.remove('active');
-                embeddedVideo.src = "";
-                document.body.style.overflow = 'auto';
+                // Si el video ya empezó pero no terminó, mostrar acción de conversión
+                if (videoStarted && !videoEnded) {
+                    actionOverlay.classList.add('active');
+                } else {
+                    closeVideoModal();
+                }
             }
+        });
+        
+        // Función para cerrar el modal completo
+        function closeVideoModal() {
+            videoModal.classList.remove('active');
+            actionOverlay.classList.remove('active');
+            embeddedVideo.src = "";
+            document.body.style.overflow = 'auto';
+            videoStarted = false;
+            videoEnded = false;
+        }
+        
+        // Seguimiento de clics en el botón del modal
+        modalRegisterBtn.addEventListener('click', function() {
+            // Registrar conversión desde el modal
+            console.log('Conversión desde modal de video');
+            // Aquí podrías agregar Google Analytics o Facebook Pixel
         });
         
         // === REFUERZO DE INSTRUCCIONES EN EL BOTÓN PRINCIPAL ===
