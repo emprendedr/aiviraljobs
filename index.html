@@ -3,1002 +3,559 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>aiviraljobs - Ingreso Automático con IA | 7 Días de Prueba Gratis</title>
-    <meta name="description" content="Comienza tu ingreso residual con IA. Prueba 7 días gratis sin tarjeta. Sigue 4 simples pasos para activar tu beneficio.">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>aijobsviraljoin - Deja que la IA Construya Tu Línea Descendente</title>
     <style>
-        :root {
-            --color-primary: #0f1b33;
-            --color-secondary: #1a2d4a;
-            --color-accent: #ff6b35;
-            --color-accent-light: #00c9b7;
-            --color-success: #10b981;
-            --color-text: #e0e7ff;
-            --color-text-muted: #94a3b8;
-            --color-light: #f8fafc;
+        /* ===== ESTILOS GENERALES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
-            background: linear-gradient(135deg, #0f1b33 0%, #1a2d4a 100%);
-            color: var(--color-text);
-            line-height: 1.6;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #f0f8ff;
+            line-height: 1.7;
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
+            padding-bottom: 2rem;
         }
-        .container { 
-            max-width: 1000px; 
-            margin: 0 auto; 
-            padding: 0 20px;
-            flex: 1;
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 1.5rem;
         }
 
-        /* === HEADER SIMPLIFICADO === */
-        .header { 
-            padding: 25px 0 15px; 
+        /* ===== CABECERA ===== */
+        header {
             text-align: center;
+            padding: 3rem 1rem;
+            background: rgba(0, 0, 0, 0.25);
+            border-radius: 20px;
+            margin-bottom: 2.5rem;
+            border: 1px solid rgba(64, 224, 208, 0.3);
         }
-        .logo-main {
-            font-size: 3.2rem;
-            font-weight: 900;
-            letter-spacing: -1px;
-            background: linear-gradient(90deg, var(--color-accent), var(--color-accent-light));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-transform: lowercase;
-            margin-bottom: 5px;
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            color: #40e0d0;
+            text-shadow: 0 0 10px rgba(64, 224, 208, 0.5);
         }
-
-        /* === CONTENIDO PRINCIPAL === */
-        .main-content {
-            padding: 10px 0 40px;
-        }
-
-        /* === TÍTULO Y DESCRIPCIÓN === */
-        .page-title {
-            font-size: 2.4rem;
-            line-height: 1.1;
-            margin-bottom: 15px;
-            color: white;
-            text-align: center;
-        }
-        .page-title span {
-            background: linear-gradient(90deg, var(--color-accent), #ff8e53);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: block;
-        }
-        .page-subtitle {
-            font-size: 1.2rem;
-            color: var(--color-text-muted);
-            margin-bottom: 30px;
-            text-align: center;
+        .tagline {
+            font-size: 1.4rem;
+            color: #b0e0e6;
             max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* ===== SECCIONES GENERALES ===== */
+        .section {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        .section-title {
+            color: #40e0d0;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        /* ===== CONTENEDORES DE VIDEO ===== */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* Relación 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-top: 1rem;
+            background: #000;
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* ===== LISTA DE FUNCIONES DE EMILY ===== */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .feature-card {
+            background: rgba(32, 58, 67, 0.7);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #40e0d0;
+        }
+        .feature-card h3 {
+            color: #98fb98;
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+        }
+
+        /* ===== SECCIÓN DE LLAMADO A LA ACCIÓN (CTA) ===== */
+        .cta-section {
+            text-align: center;
+            background: linear-gradient(to right, #1d4350, #2c5364);
+            padding: 3rem 2rem;
+            border-radius: 15px;
+            margin: 3rem 0;
+        }
+        .cta-title {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            color: #7fffd4;
+        }
+        .cta-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            color: #b0e0e6;
+            max-width: 700px;
             margin-left: auto;
             margin-right: auto;
         }
 
-        /* === VIDEO CON THUMBNAIL MÁS ATRACTIVO === */
-        .video-section {
-            margin: 25px auto 35px;
-            max-width: 850px;
-        }
-        .video-title {
-            font-size: 1.4rem;
-            color: var(--color-accent-light);
-            margin-bottom: 15px;
-            text-align: center;
-            font-weight: 600;
-        }
-        
-        /* Contenedor del video con efecto premium */
-        .video-container {
-            position: relative;
-            border-radius: 18px;
-            overflow: hidden;
-            background: #000;
-            box-shadow: 
-                0 25px 50px -12px rgba(0, 0, 0, 0.5),
-                0 0 0 1px rgba(255, 107, 53, 0.2),
-                0 0 30px rgba(255, 107, 53, 0.1);
-            transform: perspective(1000px) rotateX(1deg);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        /* ===== BOTÓN DE REGISTRO PRINCIPAL ===== */
+        .register-button {
+            display: inline-block;
+            background: linear-gradient(90deg, #00c9ff, #92fe9d);
+            color: #0f2027;
+            font-weight: bold;
+            font-size: 1.3rem;
+            padding: 1.2rem 3.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            margin: 1.5rem 0;
+            border: none;
             cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 201, 255, 0.4);
+            transition: all 0.3s ease;
         }
-        .video-container:hover {
-            transform: perspective(1000px) rotateX(0deg) translateY(-8px);
-            box-shadow: 
-                0 35px 60px -12px rgba(0, 0, 0, 0.6),
-                0 0 0 2px rgba(255, 107, 53, 0.4),
-                0 0 40px rgba(255, 107, 53, 0.2);
+        .register-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 201, 255, 0.6);
+            background: linear-gradient(90deg, #92fe9d, #00c9ff);
         }
-        
-        /* Thumbnail con superposición llamativa */
-        .video-thumbnail {
+        .risk-free {
+            color: #98fb98;
+            font-style: italic;
+            margin-top: 1rem;
+            font-size: 1.1rem;
+        }
+
+        /* ===== SECCIÓN: TU MATRIZ 3x8 ===== */
+        .income-section {
+            background: rgba(15, 32, 39, 0.85);
+            border-left: 6px solid #FFA500;
+        }
+        .income-intro, .payouts, .breakdown {
+            margin-bottom: 2.5rem;
+        }
+        .income-intro p, .payouts p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            color: #e0ffff;
+        }
+        .highlight-box {
+            background: rgba(255, 165, 0, 0.1);
+            border: 1px solid #FFA500;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .highlight-box h3 {
+            color: #FFD700;
+            margin-bottom: 0.8rem;
+        }
+        .payout-list {
+            list-style: none;
+            padding-left: 1rem;
+        }
+        .payout-list li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
             position: relative;
-            width: 100%;
-            height: 0;
-            padding-bottom: 56.25%;
-            background: linear-gradient(45deg, #0f1b33, #1a2d4a);
-            background-image: 
-                linear-gradient(45deg, rgba(15, 27, 51, 0.8), rgba(26, 45, 74, 0.8)),
-                url('https://img.youtube.com/vi/9i8HzENK6Js/maxresdefault.jpg');
-            background-size: cover;
-            background-position: center;
-            background-blend-mode: overlay;
         }
-        
-        /* Efecto de brillo en los bordes */
-        .video-thumbnail::before {
-            content: '';
+        .payout-list li:before {
+            content: '💰';
             position: absolute;
-            top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(
-                45deg,
-                transparent 0%,
-                rgba(255, 107, 53, 0.1) 50%,
-                transparent 100%
-            );
-            z-index: 1;
         }
-        
-        /* Badge de duración */
-        .video-duration {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: rgba(0, 0, 0, 0.8);
-            color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            z-index: 2;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        .earnings-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            background: rgba(255, 255, 255, 0.05);
         }
-        
-        /* Badge de "Click para ver" */
-        .video-click-badge {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            background: linear-gradient(90deg, var(--color-accent), #ff8e53);
+        .earnings-table th, .earnings-table td {
+            border: 1px solid #2c5364;
+            padding: 0.9rem;
+            text-align: center;
+        }
+        .earnings-table th {
+            background-color: #1d4350;
+            color: #7fffd4;
+        }
+        .earnings-table .total-row {
+            font-weight: bold;
+            background-color: rgba(255, 215, 0, 0.15);
+            color: #FFD700;
+        }
+        .matrix-total {
+            font-size: 1.8rem;
+            color: #92fe9d;
+            text-align: center;
+            margin-top: 1.5rem;
+            font-weight: bold;
+        }
+
+        /* ===== SECCIÓN DE PREGUNTAS FRECUENTES (FAQ) ===== */
+        .faq-section {
+            background: rgba(147, 112, 219, 0.1);
+            border-left: 6px solid #9370DB;
+        }
+        .faq-link-button {
+            display: inline-block;
+            background: linear-gradient(90deg, #9370DB, #BA55D3);
             color: white;
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 700;
-            z-index: 2;
+            font-weight: bold;
+            font-size: 1.2rem;
+            padding: 1rem 2.5rem;
+            border-radius: 10px;
+            text-decoration: none;
+            margin-top: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        .faq-link-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(147, 112, 219, 0.5);
+            background: linear-gradient(90deg, #BA55D3, #9370DB);
+        }
+
+        /* ===== ESTILOS PARA EL FOOTER ACTUALIZADO ===== */
+        .footer-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(64, 224, 208, 0.2);
+            color: #87ceeb;
+            font-size: 0.95rem;
+        }
+        .footer-credit {
+            background: rgba(15, 32, 39, 0.6);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            border-left: 4px solid #40e0d0;
+        }
+        .footer-credit p {
+            margin-bottom: 0.7rem;
+        }
+        .highlight-contact {
+            font-size: 1.1rem;
+            color: #7fffd4;
+            margin-top: 1rem !important;
+        }
+        .highlight-contact a {
+            color: #7fffd4;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .highlight-contact a:hover {
+            text-decoration: underline;
+            color: #92fe9d;
+        }
+        .footer-social {
+            text-align: center;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+        }
+        .footer-social h3 {
+            color: #40e0d0;
+            margin-bottom: 0.8rem;
+            font-size: 1.4rem;
+        }
+        .footer-social > p {
+            color: #b0e0e6;
+            margin-bottom: 1.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .social-icons {
             display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .social-icon {
+            display: inline-flex;
             align-items: center;
             gap: 8px;
-            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-        
-        /* Botón de reproducción central */
-        .video-play-button {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 3;
-            width: 90px;
-            height: 90px;
-            background: linear-gradient(135deg, var(--color-accent), #ff8e53);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 
-                0 20px 40px rgba(0, 0, 0, 0.4),
-                0 0 0 10px rgba(255, 107, 53, 0.2),
-                0 0 0 20px rgba(255, 107, 53, 0.1);
+            background: rgba(255, 255, 255, 0.08);
+            color: #e0ffff;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
             transition: all 0.3s ease;
-            border: 4px solid rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(64, 224, 208, 0.3);
         }
-        .video-container:hover .video-play-button {
-            width: 100px;
-            height: 100px;
-            box-shadow: 
-                0 25px 50px rgba(0, 0, 0, 0.5),
-                0 0 0 12px rgba(255, 107, 53, 0.3),
-                0 0 0 24px rgba(255, 107, 53, 0.15);
-        }
-        .video-play-button i {
+        .social-icon:hover {
+            background: rgba(64, 224, 208, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(64, 224, 208, 0.2);
             color: white;
-            font-size: 36px;
-            margin-left: 5px;
+            border-color: #40e0d0;
         }
-        
-        /* Título sobre la thumbnail */
-        .video-thumbnail-title {
-            position: absolute;
-            bottom: 60px;
-            left: 0;
-            right: 0;
-            padding: 0 30px;
-            text-align: center;
-            z-index: 2;
-        }
-        .video-thumbnail-title h3 {
-            color: white;
-            font-size: 1.8rem;
-            font-weight: 800;
-            margin-bottom: 10px;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-        }
-        .video-thumbnail-title p {
-            color: var(--color-accent-light);
-            font-size: 1.1rem;
-            font-weight: 500;
-        }
-
-        /* === SECCIÓN "EMILY EXPLICA" MEJORADA === */
-        .emily-section {
-            background: linear-gradient(135deg, rgba(26, 45, 74, 0.9), rgba(15, 27, 51, 0.9));
-            border-radius: 18px;
-            padding: 40px;
-            margin: 40px auto;
-            max-width: 850px;
-            border: 2px solid rgba(255, 107, 53, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-        .emily-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="%2300c9b7" stroke-width="0.5" opacity="0.1"/></svg>');
-            background-size: 200px;
-            opacity: 0.3;
-        }
-        .emily-header {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            margin-bottom: 25px;
-        }
-        .emily-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .social-icon svg {
             flex-shrink: 0;
-            box-shadow: 0 10px 25px rgba(255, 107, 53, 0.3);
         }
-        .emily-icon i {
-            color: white;
-            font-size: 32px;
+        .footer-bottom {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #87ceeb;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
-        .emily-title {
-            font-size: 2rem;
-            font-weight: 800;
-            color: white;
-            line-height: 1.2;
-        }
-        .emily-title span {
-            color: var(--color-accent-light);
-        }
-        .emily-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 25px;
-        }
-        .emily-feature {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 20px;
-            border-radius: 12px;
-            border-left: 4px solid var(--color-accent);
-            transition: transform 0.3s ease;
-        }
-        .emily-feature:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.08);
-        }
-        .emily-feature i {
-            color: var(--color-accent-light);
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            display: block;
-        }
-        .emily-feature h4 {
-            color: white;
-            font-size: 1.2rem;
-            margin-bottom: 8px;
-        }
-        .emily-feature p {
-            color: var(--color-text-muted);
-            font-size: 0.95rem;
-            line-height: 1.5;
+        .footer-bottom p {
+            margin-bottom: 0.5rem;
         }
 
-        /* === INSTRUCCIONES PASO A PASO === */
-        .instructions-section {
-            background: linear-gradient(135deg, rgba(15, 27, 51, 0.9), rgba(26, 45, 74, 0.9));
-            border-radius: 18px;
-            padding: 40px;
-            margin: 40px auto;
-            max-width: 850px;
-            border: 2px solid rgba(0, 201, 183, 0.2);
-        }
-        .instructions-title {
-            color: var(--color-accent-light);
-            font-size: 1.8rem;
-            margin-bottom: 30px;
-            text-align: center;
-            font-weight: 700;
-        }
-        .steps-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 25px;
-        }
-        .step-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            padding: 25px;
-            text-align: center;
-            position: relative;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        .step-card:hover {
-            transform: translateY(-8px);
-            background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(255, 107, 53, 0.3);
-        }
-        .step-number {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--color-accent), #ff8e53);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 900;
-            font-size: 1.5rem;
-            margin: 0 auto 20px;
-            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
-        }
-        .step-content h4 {
-            color: white;
-            font-size: 1.2rem;
-            margin-bottom: 12px;
-            font-weight: 600;
-        }
-        .step-content p {
-            color: var(--color-text-muted);
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-
-        /* === BOTONES DE ACCIÓN === */
-        .cta-section {
-            text-align: center;
-            margin: 50px auto;
-            max-width: 850px;
-        }
-        .cta-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            margin: 30px 0;
-        }
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 22px 40px;
-            border-radius: 15px;
-            font-size: 1.2rem;
-            font-weight: 800;
-            text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            min-width: 300px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: 0.5s;
-        }
-        .btn:hover::before {
-            left: 100%;
-        }
-        .btn-primary {
-            background: linear-gradient(90deg, var(--color-accent), #ff8e53);
-            color: white;
-            box-shadow: 0 15px 35px rgba(255, 107, 53, 0.4);
-        }
-        .btn-primary:hover {
-            transform: translateY(-8px) scale(1.05);
-            box-shadow: 0 25px 50px rgba(255, 107, 53, 0.6);
-        }
-        .btn-secondary {
-            background: linear-gradient(90deg, var(--color-secondary), #2d436e);
-            color: var(--color-text);
-            border: 2px solid var(--color-accent-light);
-        }
-        .btn-secondary:hover {
-            transform: translateY(-5px);
-            background: rgba(0, 201, 183, 0.1);
-            border-color: var(--color-accent);
-        }
-        .btn i {
-            margin-right: 15px;
-            font-size: 1.4rem;
-        }
-
-        /* === ALERTA IMPORTANTE === */
-        .important-alert {
-            background: linear-gradient(90deg, rgba(239, 68, 68, 0.15), rgba(239, 68, 68, 0.05));
-            border-radius: 15px;
-            padding: 25px;
-            margin: 40px auto;
-            max-width: 850px;
-            border: 2px solid rgba(239, 68, 68, 0.3);
-            text-align: center;
-        }
-        .important-alert-content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-        }
-        .important-alert i {
-            color: #fca5a5;
-            font-size: 2rem;
-        }
-        .important-alert p {
-            color: #fca5a5;
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin: 0;
-        }
-
-        /* === MODAL DE VIDEO === */
-        .video-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.98);
-            z-index: 10000;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-        .video-modal.active {
-            display: flex;
-        }
-        .modal-content {
-            position: relative;
-            width: 100%;
-            max-width: 900px;
-            background: #000;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.8);
-        }
-        .close-modal {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: rgba(255, 255, 255, 0.15);
-            color: white;
-            border: none;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            font-size: 1.5rem;
-            cursor: pointer;
-            z-index: 10;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-        }
-        .close-modal:hover {
-            background: rgba(255, 107, 53, 0.8);
-            transform: rotate(90deg);
-        }
-        .modal-video-wrapper {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%;
-        }
-        .modal-video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        /* === OVERLAY DE REDIRECCIÓN AUTOMÁTICA === */
-        .redirect-overlay {
-            display: none;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(15, 27, 51, 0.95), rgba(26, 45, 74, 0.95));
-            z-index: 5;
-            align-items: center;
-            justify-content: center;
-            padding: 40px;
-            text-align: center;
-        }
-        .redirect-overlay.active {
-            display: flex;
-            animation: fadeIn 0.5s ease;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        .redirect-content {
-            max-width: 600px;
-        }
-        .redirect-icon {
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(135deg, var(--color-success), var(--color-accent-light));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 30px;
-            box-shadow: 0 20px 40px rgba(16, 185, 129, 0.3);
-            animation: bounce 2s infinite;
-        }
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-        .redirect-icon i {
-            color: white;
-            font-size: 48px;
-        }
-        .redirect-title {
-            color: white;
-            font-size: 2.2rem;
-            margin-bottom: 20px;
-            font-weight: 800;
-        }
-        .redirect-subtitle {
-            color: var(--color-accent-light);
-            font-size: 1.3rem;
-            margin-bottom: 30px;
-            font-weight: 500;
-        }
-        .redirect-countdown {
-            color: var(--color-accent);
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 30px;
-            font-family: 'Courier New', monospace;
-        }
-        .redirect-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 25px 50px;
-            background: linear-gradient(90deg, var(--color-accent), #ff8e53);
-            color: white;
-            border-radius: 15px;
-            font-size: 1.4rem;
-            font-weight: 800;
-            text-decoration: none;
-            box-shadow: 0 20px 40px rgba(255, 107, 53, 0.5);
-            transition: all 0.3s ease;
-            animation: pulse-large 2s infinite;
-        }
-        @keyframes pulse-large {
-            0% { transform: scale(1); box-shadow: 0 20px 40px rgba(255, 107, 53, 0.5); }
-            50% { transform: scale(1.05); box-shadow: 0 30px 60px rgba(255, 107, 53, 0.7); }
-            100% { transform: scale(1); box-shadow: 0 20px 40px rgba(255, 107, 53, 0.5); }
-        }
-        .redirect-btn:hover {
-            transform: translateY(-5px) scale(1.05);
-            animation: none;
-            box-shadow: 0 30px 60px rgba(255, 107, 53, 0.8);
-        }
-        .redirect-btn i {
-            margin-right: 15px;
-            font-size: 1.6rem;
-        }
-
-        /* === FOOTER SIMPLIFICADO === */
-        .footer {
-            background: rgba(10, 20, 39, 0.95);
-            padding: 30px 0;
-            border-top: 2px solid rgba(255, 107, 53, 0.1);
-            text-align: center;
-            margin-top: 60px;
-            backdrop-filter: blur(10px);
-        }
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 25px;
-            flex-wrap: wrap;
-        }
-        .footer-links a {
-            color: var(--color-text-muted);
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            padding: 8px 16px;
-            border-radius: 8px;
-        }
-        .footer-links a:hover {
-            color: var(--color-accent-light);
-            background: rgba(0, 201, 183, 0.1);
-            transform: translateY(-2px);
-        }
-        .copyright {
-            color: var(--color-text-muted);
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
-
-        /* === RESPONSIVE === */
+        /* ===== DISEÑO RESPONSIVE PARA MÓVILES ===== */
         @media (max-width: 768px) {
-            .logo-main { font-size: 2.5rem; }
-            .page-title { font-size: 2rem; }
-            .page-subtitle { font-size: 1.1rem; }
-            .video-container { border-radius: 12px; }
-            .video-thumbnail-title h3 { font-size: 1.4rem; }
-            .video-thumbnail-title p { font-size: 1rem; }
-            .video-play-button { width: 70px; height: 70px; }
-            .video-play-button i { font-size: 28px; }
-            .video-container:hover .video-play-button { width: 80px; height: 80px; }
-            .emily-section { padding: 25px; }
-            .emily-title { font-size: 1.6rem; }
-            .emily-features { grid-template-columns: 1fr; }
-            .instructions-section { padding: 25px; }
-            .steps-container { grid-template-columns: 1fr; }
-            .cta-buttons { flex-direction: column; }
-            .btn { min-width: 100%; padding: 20px; }
-            .footer-links { flex-direction: column; gap: 15px; }
-            .redirect-title { font-size: 1.8rem; }
-            .redirect-subtitle { font-size: 1.1rem; }
-            .redirect-btn { padding: 20px 30px; font-size: 1.2rem; }
+            .container { padding: 1rem; }
+            h1 { font-size: 2.2rem; }
+            .tagline, .cta-subtitle { font-size: 1.1rem; }
+            .section { padding: 1.5rem; }
+            .cta-title { font-size: 1.8rem; }
+            .register-button, .faq-link-button {
+                padding: 1rem 2rem;
+                font-size: 1.1rem;
+                width: 90%;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .features-grid { grid-template-columns: 1fr; }
+            .earnings-table { font-size: 0.9rem; }
+            .earnings-table th, .earnings-table td { padding: 0.6rem; }
+            .matrix-total { font-size: 1.5rem; }
+            .social-icons { gap: 1rem; }
+            .social-icon { padding: 0.7rem 1.2rem; font-size: 0.95rem; }
         }
     </style>
 </head>
 <body>
-    <!-- HEADER SIMPLIFICADO -->
-    <header class="header">
-        <div class="container">
-            <div class="logo-main">aiviraljobs</div>
-        </div>
-    </header>
+    <div class="container">
+        <!-- Cabecera con título y eslogan -->
+        <header>
+            <h1>aijobsviraljoin</h1>
+            <p class="tagline">Deja que la IA Construya Tu Línea Descendente Mientras Tú Relajas</p>
+            <p class="tagline">Emily explica tu negocio, responde preguntas y cierra a tus prospectos — las 24 horas del día.</p>
+        </header>
 
-    <!-- CONTENIDO PRINCIPAL -->
-    <main class="container">
-        <div class="main-content">
-            <!-- TÍTULO Y DESCRIPCIÓN -->
-            <h1 class="page-title">Deja que la IA construya tu <span>ingreso residual</span></h1>
-            <p class="page-subtitle">Gana cada mes mientras tú te relajas o atiendes otros compromisos.</p>
-
-            <!-- VIDEO CON THUMBNAIL SUPER ATRACTIVO -->
-            <section class="video-section">
-                <h2 class="video-title">Mira este video de 41 segundos</h2>
-                <div class="video-container" id="videoContainer">
-                    <div class="video-thumbnail">
-                        <div class="video-click-badge">
-                            <i class="fas fa-mouse-pointer"></i> CLICK PARA VER
-                        </div>
-                        <div class="video-duration">
-                            <i class="far fa-clock"></i> 00:41
-                        </div>
-                        <div class="video-thumbnail-title">
-                            <h3>Descubre el Secreto del Ingreso Automático</h3>
-                            <p>41 segundos que cambiarán tu perspectiva sobre los ingresos residuales</p>
-                        </div>
-                        <div class="video-play-button">
-                            <i class="fas fa-play"></i>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SECCIÓN "EMILY EXPLICA" MEJORADA -->
-            <section class="emily-section">
-                <div class="emily-header">
-                    <div class="emily-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <div>
-                        <h2 class="emily-title">
-                            <span>Emily</span> es tu Asistente de IA 24/7 que construye tu negocio automático
-                        </h2>
-                    </div>
-                </div>
-                
-                <div class="emily-features">
-                    <div class="emily-feature">
-                        <i class="fas fa-comments"></i>
-                        <h4>Atiende Consultas las 24 Horas</h4>
-                        <p>Responde preguntas de tus clientes en tiempo real, incluso mientras duermes.</p>
-                    </div>
-                    
-                    <div class="emily-feature">
-                        <i class="fas fa-chart-line"></i>
-                        <h4>Cierra Ventas Automáticamente</h4>
-                        <p>Convierte consultas en ventas con un proceso de cierre optimizado por IA.</p>
-                    </div>
-                    
-                    <div class="emily-feature">
-                        <i class="fas fa-user-tie"></i>
-                        <h4>Personaliza para Tu Negocio</h4>
-                        <p>Se adapta completamente a tus servicios, productos y estilo de comunicación.</p>
-                    </div>
-                    
-                    <div class="emily-feature">
-                        <i class="fas fa-money-bill-wave"></i>
-                        <h4>Genera Ingresos Residuales</h4>
-                        <p>Crea un flujo de ingresos automático que funciona sin tu intervención diaria.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- INSTRUCCIONES PASO A PASO -->
-            <section class="instructions-section">
-                <h3 class="instructions-title">Comienza en 4 Simples Pasos</h3>
-                <div class="steps-container">
-                    <div class="step-card">
-                        <div class="step-number">1</div>
-                        <div class="step-content">
-                            <h4>Haz clic en el botón</h4>
-                            <p>Presiona "7 días de prueba" en esta página para iniciar el proceso.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="step-card">
-                        <div class="step-number">2</div>
-                        <div class="step-content">
-                            <h4>Confirma en inglés</h4>
-                            <p>En la siguiente página, haz clic en "7 Days Free Trial" para continuar.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="step-card">
-                        <div class="step-number">3</div>
-                        <div class="step-content">
-                            <h4>Regístrate sin tarjeta</h4>
-                            <p>Completa tus datos. No necesitas tarjeta de crédito para los 7 días gratis.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="step-card">
-                        <div class="step-number">4</div>
-                        <div class="step-content">
-                            <h4>Obtén tu código</h4>
-                            <p>Accede a tu oficina virtual y adquiere tu código de franquicia único.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- BOTONES DE ACCIÓN -->
-            <section class="cta-section">
-                <div class="cta-buttons">
-                    <a href="https://aiviraldownline.com/lc.php?id=Jobshndez" class="btn btn-primary" target="_blank" id="mainRegisterBtn">
-                        <i class="fas fa-gift"></i> 7 días de prueba GRATIS
-                    </a>
-                    <a href="https://wa.link/biogdi" class="btn btn-secondary" target="_blank">
-                        <i class="fab fa-whatsapp"></i> ¿Tienes dudas? Escríbenos
-                    </a>
-                </div>
-            </section>
-
-            <!-- ALERTA IMPORTANTE -->
-            <div class="important-alert">
-                <div class="important-alert-content">
-                    <i class="fas fa-credit-card"></i>
-                    <p><strong>Importante:</strong> No necesitas tarjeta de crédito para comenzar. Tu prueba de 7 días es 100% gratuita.</p>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <!-- MODAL DE VIDEO CON REDIRECCIÓN AUTOMÁTICA -->
-    <div class="video-modal" id="videoModal">
-        <div class="modal-content">
-            <button class="close-modal" id="closeModal">
-                <i class="fas fa-times"></i>
-            </button>
-            <div class="modal-video-wrapper">
-                <iframe id="embeddedVideo" 
-                        src="" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        <!-- Primer video (Intro de Emily) -->
+        <section class="section">
+            <h2 class="section-title">Mira este corto video</h2>
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/IBhOkKNunkc"
+                        title="Presentación de Emily - IA para Negocios"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen>
                 </iframe>
-                
-                <!-- OVERLAY DE REDIRECCIÓN AUTOMÁTICA -->
-                <div class="redirect-overlay" id="redirectOverlay">
-                    <div class="redirect-content">
-                        <div class="redirect-icon">
-                            <i class="fas fa-check-circle"></i>
-                        </div>
-                        <h2 class="redirect-title">¡Excelente!</h2>
-                        <p class="redirect-subtitle">Ya viste el secreto del ingreso automático. Ahora es tu momento.</p>
-                        <div class="redirect-countdown" id="countdown">Redirigiendo en: 5</div>
-                        <a href="https://aiviraldownline.com/lc.php?id=Jobshndez" class="redirect-btn" target="_blank" id="redirectBtn">
-                            <i class="fas fa-rocket"></i> Comienza tu prueba GRATIS ahora
+            </div>
+        </section>
+
+        <!-- Sección: Lo que Emily hará por ti -->
+        <section class="section">
+            <h2 class="section-title">Lo que Emily hará por ti</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>🧠 Explica de forma sencilla</h3>
+                    <p>Explica la línea descendente viral con IA en un lenguaje claro y fácil de entender para cualquier prospecto.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📊 Desglosa la matriz 3x8</h3>
+                    <p>Descompone la estructura de compensación para que los prospectos la entiendan al instante, sin confusiones.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🛡️ Supera objeciones</h3>
+                    <p>Anticipa y responde a las dudas comunes antes de que la gente siquiera las pregunte, allanando el camino.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🤖 Guía el registro automático</h3>
+                    <p>Guía paso a paso a los prospectos para que se unan a tu equipo de manera automática y sin esfuerzo para ti.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Segundo video (Presentación completa) -->
+        <section class="section">
+            <h2 class="section-title">Presentación Completa del Sistema</h2>
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/A8bGvBjWgkw"
+                        title="Presentación Completa del Programa AIViralDownline"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+
+        <!-- Sección: Tu Matriz 3x8 - Ingresos Residuales -->
+        <section class="section income-section">
+            <h2 class="section-title">Tu Matriz 3x8 — Ingresos Residuales a partir del Mes 2</h2>
+
+            <div class="income-intro">
+                <p>Como miembro <strong>GRATUITO</strong>, ya ocupas una posición en la matriz. Una vez que te actualices, desbloqueas toda la estructura de ingresos, <strong>incluyendo la capacidad de ganar durante tu prueba de 7 días</strong>.</p>
+            </div>
+
+            <div class="payouts">
+                <h3>💰 Pagos Mensuales de la Matriz</h3>
+                <ul class="payout-list">
+                    <li><strong>Nivel 1</strong> — $10 por miembro (3 miembros = $30/mes - ¡No importa cómo lleguen a ti!)</li>
+                    <li><strong>Niveles 2–7</strong> — $2 por miembro mensual (Ganas Comisiones de Matriz del Nivel 1 al 7 con <strong>cero</strong> referidos personales)</li>
+                    <li><strong>Nivel 8</strong> — $3 por miembro (Requiere solo 3 referidos personales)</li>
+                </ul>
+                <div class="highlight-box">
+                    <h3>🚨 Beneficio Clave</h3>
+                    <p>Con solo 3 miembros en el Nivel 1, tu membresía se paga sola — ya sea que vengan de tus referidos o del "spillover" (derrame) del sistema.</p>
+                </div>
+            </div>
+
+            <div class="breakdown">
+                <h3>📈 Desglose de Ganancias — Tu Potencial de Ingresos</h3>
+                <p>Los niveles 1–7 pueden pagar hasta <strong>$6,582/mes sin necesidad de patrocinar a nadie</strong>. Si añades el Nivel 8, la matriz completa suma <strong>$26,265 mensuales</strong>.</p>
+
+                <h4>Niveles 1–7 (Ganancias sin patrocinio)</h4>
+                <table class="earnings-table">
+                    <thead>
+                        <tr>
+                            <th>Nivel</th>
+                            <th>Miembros</th>
+                            <th>Comisión por Miembro</th>
+                            <th>Ingreso Mensual</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Nivel 1</td><td>3</td><td>$10</td><td>$30</td></tr>
+                        <tr><td>Nivel 2</td><td>9</td><td>$2</td><td>$18</td></tr>
+                        <tr><td>Nivel 3</td><td>27</td><td>$2</td><td>$54</td></tr>
+                        <tr><td>Nivel 4</td><td>81</td><td>$2</td><td>$162</td></tr>
+                        <tr><td>Nivel 5</td><td>243</td><td>$2</td><td>$486</td></tr>
+                        <tr><td>Nivel 6</td><td>729</td><td>$2</td><td>$1,458</td></tr>
+                        <tr><td>Nivel 7</td><td>2,187</td><td>$2</td><td>$4,374</td></tr>
+                        <tr class="total-row">
+                            <td colspan="3"><strong>TOTAL (Niveles 1-7)</strong></td>
+                            <td><strong>$6,582/mes</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>Nivel 8 (Con solo 3 referidos personales)</h4>
+                <table class="earnings-table">
+                    <thead>
+                        <tr>
+                            <th>Nivel</th>
+                            <th>Miembros</th>
+                            <th>Comisión por Miembro</th>
+                            <th>Ingreso Mensual</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Nivel 8</td><td>6,561</td><td>$3</td><td>$19,683</td></tr>
+                    </tbody>
+                </table>
+
+                <p class="matrix-total">🔥 Total de Matriz Completa: $26,265/mes</p>
+            </div>
+        </section>
+
+        <!-- Sección: Preguntas y Respuestas Comunes (FAQ) -->
+        <section class="section faq-section">
+            <h2 class="section-title">¿Tienes más preguntas? Te tenemos cubierto</h2>
+            <p>Consulta nuestra sección completa de Preguntas Frecuentes (FAQ) para aclarar cualquier duda sobre el programa, pagos, el rol de Emily o cómo comenzar.</p>
+            <p>Encontrarás respuestas detalladas y claras a las preguntas más comunes que tienen nuestros miembros.</p>
+
+            <a href="https://qnaviraldownline.vercel.app/" class="faq-link-button" target="_blank">
+                📚 Ir a Preguntas Frecuentes (FAQ)
+            </a>
+            <p style="margin-top: 1rem; font-size: 0.9rem;"><em>Serás dirigido a nuestra página oficial de FAQ.</em></p>
+        </section>
+
+        <!-- Sección de Llamado a la Acción (CTA) -->
+        <section class="cta-section">
+            <h2 class="cta-title">¡Desbloquea a Emily y Tu Prueba Gratuita de 7 Días!</h2>
+            <p class="cta-subtitle">Da el primer paso para automatizar tu negocio y activar tu potencial de ingresos residuales. El registro es rápido, sencillo y sin compromiso.</p>
+
+            <!-- Botón de Registro Principal -->
+            <a href="https://aiviraldownline.com/lc.php?id=Jobshndez" class="register-button" target="_blank">
+                ¡REGÍSTRATE GRATIS AQUÍ!
+            </a>
+            <p class="risk-free">¡No tienes absolutamente nada que perder!</p>
+            <p><small>Al hacer clic, serás dirigido a la página oficial de registro de AI Viral Downline.</small></p>
+        </section>
+
+        <!-- FOOTER ACTUALIZADO -->
+        <footer>
+            <div class="footer-content">
+                <!-- Texto de crédito y oferta -->
+                <div class="footer-credit">
+                    <!-- TEXTO ACTUALIZADO AQUÍ -->
+                    <p>💡 <strong>Este sitio está asociado con Aiviraldownline</strong> para ayudarte a duplicarte más rápido en el negocio digital.</p>
+                    <p>Si deseas una página web profesional y optimizada como esta para tu proyecto, contáctame:</p>
+                    <p class="highlight-contact">📧 <a href="mailto:Jobshndez@gmail.com">Jobshndez@gmail.com</a></p>
+                </div>
+
+                <!-- Redes Sociales -->
+                <div class="footer-social">
+                    <h3>Sígueme en Redes Sociales</h3>
+                    <p>Más tips, contenido y novedades sobre marketing digital y automatización.</p>
+                    <div class="social-icons">
+                        <a href="https://www.tiktok.com/@jobsproducts?_r=1&_t=ZT-92KACw4Evlt" target="_blank" class="social-icon" title="TikTok de Jobshndez">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3V0Z"/>
+                            </svg>
+                            TikTok
+                        </a>
+                        <a href="https://www.facebook.com/Exploremypage?mibextid=wwXIfr&mibextid=wwXIfr" target="_blank" class="social-icon" title="Facebook de Jobshndez">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                            </svg>
+                            Facebook
+                        </a>
+                        <a href="https://www.instagram.com/jobshndez?igsh=NTc4MTIwNjQ2YQ%3D%3D&utm_source=qr" target="_blank" class="social-icon" title="Instagram de Jobshndez">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 1 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                            </svg>
+                            Instagram
                         </a>
                     </div>
                 </div>
+
+                <!-- Línea de derechos de autor -->
+                <div class="footer-bottom">
+                    <p>© <span id="currentYear"></span> aijobsviraljoin. Este sitio está asociado al programa AI Viral Downline.</p>
+                    <p>Para asistencia con el programa, contacta a la persona que te compartió este enlace o escribe a: <strong>jobshendez@gmail.com</strong></p>
+                </div>
             </div>
-        </div>
+        </footer>
     </div>
 
-    <!-- FOOTER SIMPLIFICADO -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-links">
-                <a href="#privacidad">Política de privacidad</a>
-                <a href="#terminos">Términos de servicio</a>
-            </div>
-            <div class="copyright">
-                &copy; <span id="currentYear"></span> aiviraljobs. Todos los derechos reservados.
-            </div>
-        </div>
-    </footer>
-
     <script>
-        // Año actual en el footer
+        // Año actual en el pie de página
         document.getElementById('currentYear').textContent = new Date().getFullYear();
-        
-        // === SISTEMA DE VIDEO CON REDIRECCIÓN AUTOMÁTICA ===
-        const videoContainer = document.getElementById('videoContainer');
-        const videoModal = document.getElementById('videoModal');
-        const closeModal = document.getElementById('closeModal');
-        const embeddedVideo = document.getElementById('embeddedVideo');
-        const redirectOverlay = document.getElementById('redirectOverlay');
-        const countdownElement = document.getElementById('countdown');
-        const redirectBtn = document.getElementById('redirectBtn');
-        
-        let countdownTimer;
-        let countdownValue = 5;
-        
-        // Abrir modal al hacer clic en el video
-        videoContainer.addEventListener('click', openVideoModal);
-        
-        // Función para abrir el modal del video
-        function openVideoModal() {
-            const videoId = '9i8HzENK6Js';
-            embeddedVideo.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&controls=1&showinfo=0&enablejsapi=1`;
-            videoModal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-            
-            // Configurar detección del fin del video
-            startVideoEndDetection();
-        }
-        
-        // Detectar cuando el video termina
-        function startVideoEndDetection() {
-            // Usar setTimeout como fallback para videos de 41 segundos
-            setTimeout(() => {
-                showRedirectOverlay();
-            }, 45000); // 45 segundos (un poco más del video para seguridad)
-            
-            // También escuchar mensajes de YouTube API
-            window.addEventListener('message', function(event) {
-                try {
-                    const data = JSON.parse(event.data);
-                    if (data.event === 'onStateChange' && data.info === 0) {
-                        showRedirectOverlay();
-                    }
-                } catch (e) {
-                    // No es un mensaje JSON válido
-                }
-            });
-        }
-        
-        // Mostrar overlay de redirección
-        function showRedirectOverlay() {
-            redirectOverlay.classList.add('active');
-            startCountdown();
-        }
-        
-        // Iniciar cuenta regresiva
-        function startCountdown() {
-            countdownValue = 5;
-            countdownElement.textContent = `Redirigiendo en: ${countdownValue}`;
-            
-            countdownTimer = setInterval(() => {
-                countdownValue--;
-                countdownElement.textContent = `Redirigiendo en: ${countdownValue}`;
-                
-                if (countdownValue <= 0) {
-                    clearInterval(countdownTimer);
-                    // Redirigir automáticamente
-                    redirectBtn.click();
-                }
-            }, 1000);
-        }
-        
-        // Cerrar modal
-        closeModal.addEventListener('click', closeVideoModal);
-        
-        // Cerrar modal al hacer clic fuera
-        videoModal.addEventListener('click', function(e) {
-            if (e.target === videoModal) {
-                closeVideoModal();
-            }
-        });
-        
-        // Función para cerrar el modal
-        function closeVideoModal() {
-            clearInterval(countdownTimer);
-            videoModal.classList.remove('active');
-            redirectOverlay.classList.remove('active');
-            embeddedVideo.src = "";
-            document.body.style.overflow = 'auto';
-        }
-        
-        // Cancelar redirección automática si el usuario hace clic manualmente
-        redirectBtn.addEventListener('click', function() {
-            clearInterval(countdownTimer);
-            // Aquí puedes agregar seguimiento de conversión
-            console.log('Conversión desde redirección automática de video');
-        });
-        
-        // === CONFIRMACIÓN EN EL BOTÓN PRINCIPAL ===
-        const mainRegisterBtn = document.getElementById('mainRegisterBtn');
-        
-        mainRegisterBtn.addEventListener('click', function(e) {
-            if(!confirm("¿Listo para comenzar tu prueba gratis?\n\nRecuerda estos pasos:\n1. Haz clic aquí (OK)\n2. En la siguiente página, haz clic en '7 Days Free Trial'\n3. Regístrate sin tarjeta\n\n¿Continuar?")) {
-                e.preventDefault();
-            }
-        });
-        
-        // === EFECTO HOVER EN EL VIDEO ===
-        videoContainer.addEventListener('mouseenter', function() {
-            this.style.cursor = 'pointer';
-        });
     </script>
 </body>
 </html>
